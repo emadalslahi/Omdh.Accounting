@@ -1,0 +1,105 @@
+{
+  "template": "app",
+  "imports": {
+    "Volo.Abp.LeptonXLiteTheme": {
+      "version": "4.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.Account": {
+      "version": "9.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.OpenIddict": {
+      "version": "9.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.Identity": {
+      "version": "9.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.TenantManagement": {
+      "version": "9.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.SettingManagement": {
+      "version": "9.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.PermissionManagement": {
+      "version": "9.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.FeatureManagement": {
+      "version": "9.2.0",
+      "isInstalled": true
+    }
+  },
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "Omdh.Accounting.Application": {
+      "path": "src/Omdh.Accounting.Application/Omdh.Accounting.Application.abppkg",
+      "folder": "src"
+    },
+    "Omdh.Accounting.Application.Tests": {
+      "path": "test/Omdh.Accounting.Application.Tests/Omdh.Accounting.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "Omdh.Accounting.Domain.Shared": {
+      "path": "src/Omdh.Accounting.Domain.Shared/Omdh.Accounting.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "Omdh.Accounting.Application.Contracts": {
+      "path": "src/Omdh.Accounting.Application.Contracts/Omdh.Accounting.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "Omdh.Accounting.HttpApi": {
+      "path": "src/Omdh.Accounting.HttpApi/Omdh.Accounting.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "Omdh.Accounting.HttpApi.Client": {
+      "path": "src/Omdh.Accounting.HttpApi.Client/Omdh.Accounting.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "Omdh.Accounting.Web": {
+      "path": "src/Omdh.Accounting.Web/Omdh.Accounting.Web.abppkg",
+      "folder": "src"
+    },
+    "Omdh.Accounting.Web.Tests": {
+      "path": "test/Omdh.Accounting.Web.Tests/Omdh.Accounting.Web.Tests.abppkg",
+      "folder": "test"
+    },
+    "Omdh.Accounting.EntityFrameworkCore.Tests": {
+      "path": "test/Omdh.Accounting.EntityFrameworkCore.Tests/Omdh.Accounting.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "Omdh.Accounting.EntityFrameworkCore": {
+      "path": "src/Omdh.Accounting.EntityFrameworkCore/Omdh.Accounting.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "Omdh.Accounting.TestBase": {
+      "path": "test/Omdh.Accounting.TestBase/Omdh.Accounting.TestBase.abppkg",
+      "folder": "test"
+    },
+    "Omdh.Accounting.Domain.Tests": {
+      "path": "test/Omdh.Accounting.Domain.Tests/Omdh.Accounting.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "Omdh.Accounting.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/Omdh.Accounting.HttpApi.Client.ConsoleTestApp/Omdh.Accounting.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "Omdh.Accounting.DbMigrator": {
+      "path": "src/Omdh.Accounting.DbMigrator/Omdh.Accounting.DbMigrator.abppkg",
+      "folder": "src"
+    },
+    "Omdh.Accounting.Domain": {
+      "path": "src/Omdh.Accounting.Domain/Omdh.Accounting.Domain.abppkg",
+      "folder": "src"
+    }
+  }
+}

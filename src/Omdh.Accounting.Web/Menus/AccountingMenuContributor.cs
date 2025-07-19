@@ -56,7 +56,23 @@ public class AccountingMenuContributor : IMenuContributor
 
         //Administration->Settings
         administration.SetSubItemOrder(SettingManagementMenuNames.GroupName, 7);
-        
+
+
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                "Accounts",
+                l["Menu:Accounts"],
+                icon: "fa fa-book"
+            ).AddItem(
+                new ApplicationMenuItem(
+                    "Accounts.ChartOfAccounts",
+                    l["Menu:ChartOfAccounts"],
+                    url: "/ChartOfAccounts"
+                )
+            )
+        );
+
+        //--------------------------------
         return Task.CompletedTask;
     }
 }

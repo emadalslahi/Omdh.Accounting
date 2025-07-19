@@ -1,0 +1,124 @@
+﻿@page
+@model Omdh.Accounting.Web.Pages.ChartOfAccounts.DeleteModel
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ChartOfAccount</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChartOfAccount.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChartOfAccount.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChartOfAccount.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChartOfAccount.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChartOfAccount.AccountNo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChartOfAccount.AccountNo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChartOfAccount.AccountLevel)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChartOfAccount.AccountLevel)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChartOfAccount.ParentAccountNo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChartOfAccount.ParentAccountNo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChartOfAccount.Code)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChartOfAccount.Code)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChartOfAccount.AccountType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChartOfAccount.AccountType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChartOfAccount.AccountCategory)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChartOfAccount.AccountCategory)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChartOfAccount.AccountStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChartOfAccount.AccountStatus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChartOfAccount.IsDeleted)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChartOfAccount.IsDeleted)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChartOfAccount.DeleterId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChartOfAccount.DeleterId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChartOfAccount.DeletionTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChartOfAccount.DeletionTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChartOfAccount.LastModificationTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChartOfAccount.LastModificationTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChartOfAccount.LastModifierId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChartOfAccount.LastModifierId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChartOfAccount.CreationTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChartOfAccount.CreationTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChartOfAccount.CreatorId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChartOfAccount.CreatorId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChartOfAccount.ExtraProperties)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChartOfAccount.ExtraProperties)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChartOfAccount.ConcurrencyStamp)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChartOfAccount.ConcurrencyStamp)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ChartOfAccount.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

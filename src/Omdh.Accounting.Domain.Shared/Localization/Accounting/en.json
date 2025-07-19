@@ -4,6 +4,47 @@
     "AppName": "Accounting",
     "Menu:Home": "Home",
     "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information visit",
-    "Welcome": "Welcome"
+    "Welcome": "Welcome",
+    //----------------------------
+
+    "PublishDate": "Publish Date",
+    "CreationTime": "Creation Time",
+    "Accounts": "Accounts",
+    "Menu:Accounts": "Accounts",
+    "ChartOfAccounts": "Chart of Accounts",
+    "Menu:ChartOfAccounts": "Chart of Accounts",
+    "Account Number": "Account Number",
+    "Account Level": "Account Level",
+    "Account Code": "Account Short Code",
+    "Account Name": "Name",
+    "Account Type": "Type",
+    "Account Category": "Category",
+    //----------
+    "Enum:AccountType.0": "Draft",
+    "Enum:AccountType.1": "Bank",
+    "Enum:AccountType.2": "Cash",
+    "Enum:AccountType.3": "Receivable",
+    "Enum:AccountType.4": "Payable",
+    "Enum:AccountType.5": "Inventory",
+    "Enum:AccountType.6": "FixedAsset",
+    "Enum:AccountType.7": "IntangibleAsset",
+    "Enum:AccountType.8": "OtherAsset",
+    "Enum:AccountType.9": "OtherLiability",
+    "Enum:AccountType.10": "EquityCapital",
+    //----------------------------
+    "Enum:AccountStatus.0": "Draft",
+    "Enum:AccountStatus.1": "Active",
+    "Enum:AccountStatus.2": "In-Active",
+    "Enum:AccountStatus.3": "Closed",
+    "Enum:AccountStatus.4": "Pending",
+    //----------------------------
+    "Enum:AccountCategory.0": "Draft",
+    "Enum:AccountCategory.1": "Asset",
+    "Enum:AccountCategory.2": "Liability",
+    "Enum:AccountCategory.3": "Equity",
+    "Enum:AccountCategory.4": "Revenue",
+    "Enum:AccountCategory.5": "Expense",
+    "Enum:AccountCategory.6": "Other"
+
   }
 }

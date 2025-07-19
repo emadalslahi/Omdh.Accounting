@@ -1,0 +1,18 @@
+﻿@page
+@using Omdh.Accounting.Localization
+@using Omdh.Accounting.Web.Pages.ChartOfAccounts
+@using Microsoft.Extensions.Localization
+@model IndexModel
+@inject IStringLocalizer<AccountingResource> L
+@section scripts
+{
+    <abp-script src="/Pages/ChartOfAccounts/Index.js" />
+}
+<abp-card>
+    <abp-card-header>
+        <h2>@L["ChartOfAccounts"]</h2>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="ChartOfAccountsTable"></abp-table>
+    </abp-card-body>
+</abp-card>

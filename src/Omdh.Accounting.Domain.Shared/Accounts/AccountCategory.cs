@@ -1,7 +1,6 @@
 ﻿namespace Omdh.Accounting.Accounts;
 // This enum represents the different categories of accounts in accounting.
 
-
 public enum AccountCategory
 {
     NotSet = 0,

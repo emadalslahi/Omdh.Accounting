@@ -1,0 +1,113 @@
+﻿@page
+@model Omdh.Accounting.Web.Pages.ChartOfAccounts.CreateModel
+
+    <h4>ChartOfAccount</h4>
+    <hr />
+    <div class="row">
+    <div class="col-md-4">
+    <form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ChartOfAccount.Name" class="control-label"></label>
+                <input asp-for="ChartOfAccount.Name" class="form-control" />
+                <span asp-validation-for="ChartOfAccount.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChartOfAccount.Description" class="control-label"></label>
+                <input asp-for="ChartOfAccount.Description" class="form-control" />
+                <span asp-validation-for="ChartOfAccount.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChartOfAccount.AccountNo" class="control-label"></label>
+                <input asp-for="ChartOfAccount.AccountNo" class="form-control" />
+                <span asp-validation-for="ChartOfAccount.AccountNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChartOfAccount.AccountLevel" class="control-label"></label>
+                <input asp-for="ChartOfAccount.AccountLevel" class="form-control" />
+                <span asp-validation-for="ChartOfAccount.AccountLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChartOfAccount.ParentAccountNo" class="control-label"></label>
+                <input asp-for="ChartOfAccount.ParentAccountNo" class="form-control" />
+                <span asp-validation-for="ChartOfAccount.ParentAccountNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChartOfAccount.Code" class="control-label"></label>
+                <input asp-for="ChartOfAccount.Code" class="form-control" />
+                <span asp-validation-for="ChartOfAccount.Code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChartOfAccount.AccountType" class="control-label"></label>
+                <select asp-for="ChartOfAccount.AccountType" class="form-control"></select>
+                <span asp-validation-for="ChartOfAccount.AccountType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChartOfAccount.AccountCategory" class="control-label"></label>
+                <select asp-for="ChartOfAccount.AccountCategory" class="form-control"></select>
+                <span asp-validation-for="ChartOfAccount.AccountCategory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChartOfAccount.AccountStatus" class="control-label"></label>
+                <select asp-for="ChartOfAccount.AccountStatus" class="form-control"></select>
+                <span asp-validation-for="ChartOfAccount.AccountStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChartOfAccount.DeleterId" class="control-label"></label>
+                <input asp-for="ChartOfAccount.DeleterId" class="form-control" />
+                <span asp-validation-for="ChartOfAccount.DeleterId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChartOfAccount.DeletionTime" class="control-label"></label>
+                <input asp-for="ChartOfAccount.DeletionTime" class="form-control" />
+                <span asp-validation-for="ChartOfAccount.DeletionTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChartOfAccount.LastModificationTime" class="control-label"></label>
+                <input asp-for="ChartOfAccount.LastModificationTime" class="form-control" />
+                <span asp-validation-for="ChartOfAccount.LastModificationTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChartOfAccount.LastModifierId" class="control-label"></label>
+                <input asp-for="ChartOfAccount.LastModifierId" class="form-control" />
+                <span asp-validation-for="ChartOfAccount.LastModifierId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChartOfAccount.CreationTime" class="control-label"></label>
+                <input asp-for="ChartOfAccount.CreationTime" class="form-control" />
+                <span asp-validation-for="ChartOfAccount.CreationTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChartOfAccount.CreatorId" class="control-label"></label>
+                <input asp-for="ChartOfAccount.CreatorId" class="form-control" />
+                <span asp-validation-for="ChartOfAccount.CreatorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChartOfAccount.ExtraProperties" class="control-label"></label>
+                <input asp-for="ChartOfAccount.ExtraProperties" class="form-control" />
+                <span asp-validation-for="ChartOfAccount.ExtraProperties" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChartOfAccount.ConcurrencyStamp" class="control-label"></label>
+                <input asp-for="ChartOfAccount.ConcurrencyStamp" class="form-control" />
+                <span asp-validation-for="ChartOfAccount.ConcurrencyStamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChartOfAccount.Id" class="control-label"></label>
+                <input asp-for="ChartOfAccount.Id" class="form-control" />
+                <span asp-validation-for="ChartOfAccount.Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

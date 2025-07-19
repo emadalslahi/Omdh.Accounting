@@ -17,6 +17,5 @@ public class ChartOfAccountAppService :
 
     public ChartOfAccountAppService(IRepository<ChartOfAccount, Guid> repository) : base(repository)
     {
-                
     }
 }

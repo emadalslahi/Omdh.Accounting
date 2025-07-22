@@ -75,7 +75,10 @@
     "Enum:AccountCategory.3": "Equity",
     "Enum:AccountCategory.4": "Revenue",
     "Enum:AccountCategory.5": "Expense",
-    "Enum:AccountCategory.6": "Other"
+    "Enum:AccountCategory.6": "Other",
     //----------------------------
+    "ChartOfAccountDeletionConfirmationMessage": "هل انت متاكـد من رغبتكـ في حذف الحســـاب  '{0}'?",
+    "SuccessfullyDeleted": "تم الحذف بنجاح!",
+    "New Account": "حسـاب جديد"
   }
 }

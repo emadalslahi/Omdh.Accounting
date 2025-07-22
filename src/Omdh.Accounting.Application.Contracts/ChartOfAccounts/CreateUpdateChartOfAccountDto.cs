@@ -16,12 +16,13 @@ namespace Omdh.Accounting.ChartOfAccounts
 
         [StringLength(1000)]
         public string Description { get; set; } = string.Empty;
+
         [Required]
         [MinLength(4)]
-        public int AccountNo { get; set; } = default!;
+        public int AccountNo { get; set; } 
         [Required]
-        public int AccountLevel { get; set; } = default!;
-        public int ParentAccountNo { get; set; } = default!;
+        public int AccountLevel { get; set; }
+        public int ParentAccountNo { get; set; }
         [Required]
         public string Code { get; set; } = string.Empty;
         [Required]

@@ -1,5 +1,9 @@
 ﻿$(function () {
+
     var l = abp.localization.getResource('Accounting');
+
+    var createModal = new abp.ModalManager(abp.appPath + 'ChartOfAccounts/CreateModal');
+    var editModal = new abp.ModalManager(abp.appPath + 'ChartOfAccounts/EditModal');
 
     var dataTable = $('#ChartOfAccountsTable').DataTable(
         abp.libs.datatables.normalizeConfiguration({
@@ -10,7 +14,35 @@
             scrollX: true, // omdh.accounting.chartOfAccounts.chartOfAccount.getList must by CamalCase
             ajax: abp.libs.datatables.createAjax(omdh.accounting.chartOfAccounts.chartOfAccount.getList),
             columnDefs: [
-
+                {
+                    title: l('Actions'),
+                    rowAction: {
+                        items:
+                            [
+                                {
+                                    text: l('Edit'),
+                                    action: function (data) {
+                                        editModal.open({ id: data.record.id });
+                                    }
+                                },
+                                {
+                                    text: l('Delete'),
+                                    confirmMessage: function (data) {
+                                        return l('ChartOfAccountDeletionConfirmationMessage', data.record.name);
+                                    },
+                                    action: function (data) {
+                                        omdh.accounting.chartOfAccounts.chartOfAccount
+                                            .delete(data.record.id)
+                                            .then(function () {
+                                                abp.notify.info(l('SuccessfullyDeleted'));
+                                                dataTable.ajax.reload();
+                                            });
+                                    }
+                                }
+                            ]
+                    }
+                },
+               
                 {
                     title: l("Account Number"),
                     data: "accountNo"
@@ -63,4 +95,20 @@
             ]
         })
     );
+
+    createModal.onResult(function () {
+        dataTable.ajax.reload();
+    });
+
+    editModal.onResult(function () {
+        dataTable.ajax.reload();
+    });
+
+    $('#NewChartOfAccount').click(function (e) {
+    e.preventDefault();
+    createModal.open();
 });
+
+
+});
+

@@ -11,7 +11,7 @@ public static class ChartOfAccountExstensions
 
         _ = builder.Entity<ChartOfAccount>(b =>
         {
-            _ = b.ToTable( "ChartOfAccounts",AccountingConsts.DbSchema);
+            _ = b.ToTable(  "ChartOfAccounts",AccountingConsts.DbSchema);
             b.ConfigureByConvention(); //auto configure for the base class props
             _ = b.Property(x => x.Name).IsRequired().HasMaxLength(255);
             _ = b.Property(x => x.Description).IsRequired().HasMaxLength(1000);

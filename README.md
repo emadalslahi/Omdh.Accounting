@@ -1,58 +1,126 @@
-﻿# Omdh.Accounting
+## مقدمة
 
-## About this solution
+في هذه المرحلة نقوم بتنقيح تحليل النظام المحاسبي المتكامل، مع التركيز على تعزيز الواقعية والشمولية، وذكر كافة الجوانب التي قد تكون ناقصة أو بحاجة لتفصيل إضافي.
 
-This is a layered startup solution based on [Domain Driven Design (DDD)](https://abp.io/docs/latest/framework/architecture/domain-driven-design) practises. All the fundamental ABP modules are already installed. Check the [Application Startup Template](https://abp.io/docs/latest/solution-templates/layered-web-application) documentation for more info.
+---
 
-### Pre-requirements
+## 1. الوحدات الأساسية (المؤكدة)
 
-* [.NET9.0+ SDK](https://dotnet.microsoft.com/download/dotnet)
-* [Node v18 or 20](https://nodejs.org/en)
+1. **دليل الحسابات (Chart of Accounts)**
+   - شجرة مرنة وديناميكية تسمح بإضافة وتعديل الحسابات.
+2. **القيود المحاسبية**
+   - إدخال يدوي.
+   - قيود آلية مرتبطة بإصدارات المستندات (فواتير، سندات، رواتب).
+3. **إدارة العملات المتعددة**
+   - أسعار صرف مرنة مع تاريخ نافذة الأسعار.
+4. **الفواتير والمستندات**
+   - فواتير المبيعات والمشتريات.
+   - سندات القبض والصرف.
+   - سند قيد عام.
+   - سندات المرتجعات.
+5. **الحسابات المرتبطة**
+   - عملاء.
+   - موردون.
+   - موظفون (لربط المصروفات الرواتب).
+6. **التقارير المالية الأساسية**
+   - دفتر اليومية.
+   - دفتر الأستاذ.
+   - ميزان المراجعة.
+   - قائمة الدخل.
+   - الميزانية العمومية.
+   - تقارير أعمار الديون.
+   - تقارير المصروفات حسب النوع.
 
-### Configurations
+---
 
-The solution comes with a default configuration that works out of the box. However, you may consider to change the following configuration before running your solution:
+## 2. الجوانب الناقصة والمطلوب إضافتها أو تعزيزها
 
-* Check the `ConnectionStrings` in `appsettings.json` files under the `Omdh.Accounting.Web` and `Omdh.Accounting.DbMigrator` projects and change it if you need.
+1. **إدارة المخزون (Inventory Management)**
+   - ربط المستودعات بالحسابات.
+   - تتبع حركات الوارد والصادر.
+   - تقييم المخزون بأساليب مختلفة (FIFO، LIFO، المتوسط).
+2. **الأصول الثابتة (Fixed Assets)**
+   - تسجيل مراكز تكلفة الأصول.
+   - جدول اهتلاك سنوي/شهري.
+   - نقل الأصول، تصنيف، وإخراج.
+3. **الموازنة وخطط التدفقات النقدية (Budgeting & Cash Flow Planning)**
+   - إعداد ميزانيات سنوية وفصلية.
+   - مقارنة الأداء الفعلي مع الميزانيات.
+   - تخطيط التدفقات النقدية وتحليل الفجوات.
+4. **التصنيفات المحاسبية المتقدمة (Cost Center / Project Accounting)**
+   - توزيع المصروفات والإيرادات حسب مراكز التكلفة أو المشاريع.
+   - تقارير ربحية المشاريع.
+5. **التقارير الضريبية والامتثال (Tax & Compliance)**
+   - إعداد وإرسال تقارير ضريبة القيمة المضافة VAT/GST.
+   - حساب الضرائب المعلقة.
+   - إعداد التقارير الضريبية الدورية (سنوية/ربع سنوية).
+6. **التسوية البنكية (Bank Reconciliation)**
+   - مسح أو تحميل كشوف البنوك.
+   - مطابقة الحركات مع القيود.
+   - كشف الفروقات وإغلاق الفجوات.
+7. **الإجراءات الأمنية والتحكم بالوصول (Security & Access Control)**
+   - صلاحيات مستخدمين متعددة (قراءة/كتابة/اعتماد).
+   - تدقيق النشاطات (Audit Trail).
+8. **التكامل مع أنظمة أخرى (Integration)**
+   - بوابة دفع إلكتروني.
+   - الربط مع أنظمة إدارة المخازن أو نقاط البيع POS.
+   - ربط بالموارد البشرية ونظم الرواتب.
+9. **التقارير التحليلية والرسوم البيانية (Analytics & Dashboards)**
+   - لوحات تحكم تفاعلية لمراقبة المؤشرات المالية.
+   - إظهار اتجاهات الإيرادات والمصروفات.
+10. **دعم الشركات المتعددة والمواءمة (Multi-Entity & Consolidation)**
+    - إدارة شركات/فروع متعددة.
+    - تجميع البيانات المالية وترحيل القيود البينية.
 
-### Before running the application
+---
 
-* Run `abp install-libs` command on your solution folder to install client-side package dependencies. This step is automatically done when you create a new solution, if you didn't especially disabled it. However, you should run it yourself if you have first cloned this solution from your source control, or added a new client-side package dependency to your solution.
-* Run `Omdh.Accounting.DbMigrator` to create the initial database. This step is also automatically done when you create a new solution, if you didn't especially disabled it. This should be done in the first run. It is also needed if a new database migration is added to the solution later.
+## 3. التوصيات
 
-#### Generating a Signing Certificate
+- **إضافة وحدة المخزون والأصول الثابتة** لضمان شمولية كاملة.
+- **تفعيل الموازنة والتخطيط** لمراقبة الأداء المالي.
+- **تعزيز الجوانب الضريبية والامتثال** لتقليل المخاطر القانونية.
+- **تطوير واجهة تحكم وتصور** لسهولة متابعة المؤشرات.
+- **تأمين البيانات وتهيئة صلاحيات** مفصلة لكل دور وظيفي.
 
-In the production environment, you need to use a production signing certificate. ABP Framework sets up signing and encryption certificates in your application and expects an `openiddict.pfx` file in your application.
+---
 
-To generate a signing certificate, you can use the following command:
+## 4. الجداول الأساسية (Entities)
 
-```bash
-dotnet dev-certs https -v -ep openiddict.pfx -p 4d49dc07-9e93-4167-b4a7-694ea36118cb
-```
+فيما يلي قائمة مفصلة للجداول (Entities) اللازمة، مع اسم الجدول باللغتين العربية والإنجليزية، المفتاح الأساسي، العلاقات (Foreign Keys)، ووصف مختصر لكل جدول:
 
-> `4d49dc07-9e93-4167-b4a7-694ea36118cb` is the password of the certificate, you can change it to any password you want.
+| الجدول (Arabic)          | Table Name (English)      | Primary Key    | Foreign Keys                                                                                                  | الوصف (Description)                                                                                      |
+|--------------------------|---------------------------|----------------|---------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| الحسابات                 | Accounts                  | AccountID      | ParentAccountID → Accounts.AccountID                                                                         | شجرة الحسابات المحاسبية مع إمكانية تصنيف هرمي. ويمكن ربط حساب واحد بعدة عملات.                         |
+| إعدادات النظام           | SystemSettings            | SettingID      | BaseCurrencyID → Currencies.CurrencyID                                                                       | إعدادات عامة، تشمل العملة المحلية الأساسية وإعدادات متعددة العملات.                                     |
+| عملات الحساب             | AccountCurrencies         | ACID           | AccountID → Accounts.AccountID, CurrencyID → Currencies.CurrencyID                                           | ربط الحسابات بالعملات التي تعمل بها مع تحديد ما إذا كانت العملة أساسية لهذا الحساب.                    |
+| العملات                  | Currencies                | CurrencyID     | -                                                                                                             | تعريف جميع العملات التي يستخدمها النظام.                                                                  |
+| أسعار الصرف              | ExchangeRates             | RateID         | CurrencyID → Currencies.CurrencyID                                                                           | تسجيل أسعار صرف العملات بتاريخ محدد.                                                                       |
+| قيود اليومية              | JournalEntries            | EntryID        | CurrencyID → Currencies.CurrencyID, CreatedBy → Users.UserID, EntryCategoryID → EntryCategories.CategoryID  | تسجيل المعاملات المحاسبية مع تفاصيل العملة والمستخدم والفئة.                                              |
+| فئات القيود              | EntryCategories           | CategoryID     | -                                                                                                             | تصنيف عام للقيود (عملاء، موردين، موظفين، وكلاء، إلخ).                                                      |
+| أنواع القيود              | EntryTypes                | TypeID         | ParentTypeID → EntryTypes.TypeID                                                                             | شجرة أنوع القيود (قيود بيع/شراء، موارد بشرية، نظامية، إلخ) مع التقسيم الفرعي.                             |
+| أسطر القيود              | JournalEntryLines         | LineID         | EntryID → JournalEntries.EntryID, AccountID → Accounts.AccountID, CostCenterID → CostCenters.CostCenterID,  | تفاصيل الحسابات المدينة والدائنة لكل قيد مع ضبط فروق العملة.                                              |
+| العملاء                   | Customers                 | CustomerID     | -                                                                                                             | بيانات العملاء مع حدود الاعتماد والعملات المقبولة.                                                       |
+| الموردون                  | Vendors                   | VendorID       | -                                                                                                             | بيانات الموردين وشروط الدفع والعملات المدعومة.                                                          |
+| الموظفون                  | Employees                 | EmployeeID     | DepartmentID → Departments.DepartmentID                                                                       | بيانات الموظفين والرواتب والمكافآت والخصومات.                                                            |
+| الإدارات                  | Departments               | DepartmentID   | -                                                                                                             | هيكل تنظيمي للمنظمات والأقسام.                                                                           |
+| الفواتير                  | Invoices                  | InvoiceID      | CustomerID/VendorID → Customers/Vendors, CurrencyID → Currencies.CurrencyID                                  | فواتير المبيعات والمشتريات بعملات متعددة.                                                                |
+| أسطر الفاتورة             | InvoiceLines              | LineID         | InvoiceID → Invoices.InvoiceID, AccountID → Accounts.AccountID                                                | تفاصيل البنود على الفاتورة.                                                                              |
+| المدفوعات                  | Payments                  | PaymentID      | RelatedInvoiceID → Invoices.InvoiceID, CurrencyID → Currencies.CurrencyID, BankAccountID → BankAccounts.BankAccountID | سجلات القبض والصرف وربطها بالفواتير.                                                                     |
+| الحسابات البنكية           | BankAccounts              | BankAccountID  | -                                                                                                             | بيانات الحسابات المصرفية للشركة.                                                                          |
+| كشوف الحساب البنكي        | BankStatements            | StatementID    | BankAccountID → BankAccounts.BankAccountID                                                                   | كشوف الحساب الشهرية.                                                                                     |
+| تسوية البنك               | BankReconciliations       | ReconciliationID | StatementID → BankStatements.StatementID                                                                     | مطابقة القيود مع كشوف البنك وتوليد قيود فروق المصارف.                                                     |
+| المخزون                   | InventoryItems            | ItemID         | -                                                                                                             | تعريف الأصناف والمنتجات الموجودة في المخازن.                                                              |
+| المخازن                   | Warehouses                | WarehouseID    | ManagerID → Employees.EmployeeID                                                                             | مواقع ومستودعات تخزين الأصناف.                                                                           |
+| حركات المخزون             | InventoryMovements        | MovementID     | ItemID → InventoryItems.ItemID, WarehouseID → Warehouses.WarehouseID                                         | تتبع حركة الوارد والصادر للأصناف.                                                                         |
+| الأصول الثابتة            | FixedAssets               | AssetID        | DepartmentID → Departments.DepartmentID                                                                       | تسجيل الأصول الثابتة وبياناتها.                                                                           |
+| اهتلاك الأصول             | AssetDepreciations         | DepreciationID | AssetID → FixedAssets.AssetID                                                                                | جدول حساب الاستهلاك الدوري للأصول.                                                                        |
+| مراكز التكلفة             | CostCenters               | CostCenterID   | ManagerID → Employees.EmployeeID                                                                             | تقسيم المصروفات والإيرادات حسب مركز التكلفة.                                                             |
+| المشاريع                  | Projects                  | ProjectID      | ManagerID → Employees.EmployeeID, BudgetID → Budgets.BudgetID                                                | بيانات المشاريع وربطها بالميزانيات.                                                                       |
+| الميزانيات                | Budgets                   | BudgetID       | DepartmentID/ProjectID → Departments/Projects                                                                 | تخصيص الميزانيات سنوياً أو لمشروع معين.                                                                  |
+| بنود الميزانية             | BudgetLines               | LineID         | BudgetID → Budgets.BudgetID, AccountID → Accounts.AccountID                                                   | تفاصيل تخصيص الميزانيات للحسابات.                                                                        |
+| التقارير الضريبية          | TaxReports                | ReportID       | -                                                                                                             | سجلات إعداد التقارير الضريبية الدورية.                                                                   |
+| المستخدمون                | Users                     | UserID         | RoleID → Roles.RoleID                                                                                         | بيانات مستخدمي النظام وصلاحياتهم.                                                                         |
+| الأدوار                    | Roles                     | RoleID         | -                                                                                                             | تحديد أدوار وصلاحيات المستخدمين.                                                                         |
+| سجل التدقيق               | AuditLogs                 | LogID          | UserID → Users.UserID                                                                                        | تتبع نشاطات المستخدمين للتدقيق.                                                                           |
 
-It is recommended to use **two** RSA certificates, distinct from the certificate(s) used for HTTPS: one for encryption, one for signing.
-
-For more information, please refer to: [OpenIddict Certificate Configuration](https://documentation.openiddict.com/configuration/encryption-and-signing-credentials.html#registering-a-certificate-recommended-for-production-ready-scenarios)
-
-> Also, see the [Configuring OpenIddict](https://abp.io/docs/latest/Deployment/Configuring-OpenIddict#production-environment) documentation for more information.
-
-### Solution structure
-
-This is a layered monolith application that consists of the following applications:
-
-* `Omdh.Accounting.DbMigrator`: A console application which applies the migrations and also seeds the initial data. It is useful on development as well as on production environment.
-* `Omdh.Accounting.Web`: ASP.NET Core MVC / Razor Pages application that is the essential web application of the solution.
-
-
-## Deploying the application
-
-Deploying an ABP application follows the same process as deploying any .NET or ASP.NET Core application. However, there are important considerations to keep in mind. For detailed guidance, refer to ABP's [deployment documentation](https://abp.io/docs/latest/Deployment/Index).
-
-### Additional resources
-
-You can see the following resources to learn more about your solution and the ABP Framework:
-
-* [Web Application Development Tutorial](https://abp.io/docs/latest/tutorials/book-store/part-1)
-* [Application Startup Template](https://abp.io/docs/latest/startup-templates/application/index)
+*تم توسيع نموذج البيانات ليشمل دعم تعدد العملات وربط الحسابات بالعملات، بالإضافة لجداول فئات وأنواع القيود لتصنيفها وتفريعها بدقة.*

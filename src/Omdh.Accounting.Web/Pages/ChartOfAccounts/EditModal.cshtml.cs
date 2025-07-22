@@ -6,7 +6,7 @@ using Omdh.Accounting.ChartOfAccounts;
 namespace Omdh.Accounting.Web.Pages.ChartOfAccounts;
 
 
-public class EditModalModel : AccountingPageModel
+public class EditModalModel(IChartOfAccountAppService appService) : AccountingPageModel
 {
     [HiddenInput]
     [BindProperty(SupportsGet = true)]
@@ -14,13 +14,14 @@ public class EditModalModel : AccountingPageModel
 
     [BindProperty] public CreateUpdateChartOfAccountDto ChartOfAccount { get; set; } =new();
 
-    private  IChartOfAccountAppService _appService;
+    private  IChartOfAccountAppService _appService = appService;
 
-
-    public EditModalModel(IChartOfAccountAppService appService)
-    {
-        _appService = appService;
-    }
+    // this constructor is used for dependency injection in the Razor Pages 
+    // this constructor will fix the bug of Cross-Site Request Forgery (CSRF) token validation failure
+    //public EditModalModel(IChartOfAccountAppService appService)
+    //{
+    //    _appService = appService;
+    //}
     public async Task OnGetAsync()
     {
         

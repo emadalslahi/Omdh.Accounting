@@ -1,10 +1,5 @@
 ﻿using Omdh.Accounting.Accounts;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Omdh.Accounting.ChartOfAccounts
 {
@@ -17,6 +12,8 @@ namespace Omdh.Accounting.ChartOfAccounts
         [StringLength(1000)]
         public string Description { get; set; } = string.Empty;
 
+
+        // minlength here is cousing cross-site request forgery (CSRF) token validation failure
         [Required]
         [MinLength(4)]
         public int AccountNo { get; set; } 

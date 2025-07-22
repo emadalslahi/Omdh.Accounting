@@ -10,19 +10,17 @@ using System.Threading.Tasks;
 
 namespace Omdh.Accounting.Web.Pages.ChartOfAccounts;
 
-public class CreateModalModel : AccountingPageModel
+public class CreateModalModel(IChartOfAccountAppService appService) : AccountingPageModel
 {
 
     [BindProperty]
-    public CreateUpdateChartOfAccountDto ChartOfAccountDto { get; set; }
+    public required CreateUpdateChartOfAccountDto ChartOfAccountDto { get; set; }
 
-    private readonly IChartOfAccountAppService _AppService;
-
-    public CreateModalModel(IChartOfAccountAppService AppService)
-    {
-        _AppService = AppService;
-    }
-
+    // this constructor will fix the bug of Cross-Site Request Forgery (CSRF) token validation failure
+    //public CreateModalModel(IChartOfAccountAppService appService)
+    //{
+    //    _appService = appService;
+    //}
     public void OnGet()
     {
         ChartOfAccountDto = new CreateUpdateChartOfAccountDto();
@@ -30,7 +28,7 @@ public class CreateModalModel : AccountingPageModel
 
     public async Task<IActionResult> OnPostAsync()
     {
-        await _AppService.CreateAsync(ChartOfAccountDto);
+        await appService.CreateAsync(ChartOfAccountDto);
         return NoContent();
     }
 }
